@@ -18,7 +18,9 @@
             <br> <br>
              
             <div class="dropdown">
-                <div class="dropdown-button"> Selecione a Região de Integração ⇓ </div>
+              <label for="">Região de Integração</label>
+              <br>
+                <div class="dropdown-button"> Selecione ⇓ </div>
                 <div class="dropdown-content">
                   {% for r in r %}
                   <div class="dropdown-item"> <a href="{% url "reg_fil" r.regiao %}"><option value="{{r.regiao}}">{{r.regiao}}</option></a>  </div>
