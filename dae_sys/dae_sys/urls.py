@@ -20,6 +20,7 @@ from dae_web_sys import views
 
 urlpatterns = [
     path('', views.home),
-    path('<str:r_regiao>/', views.home_filtrada, name='reg_fil'),
     path('admin/', admin.site.urls),
+    path('<str:r_regiao>/', views.home_filtrada, name='reg_fil'),
+    
 ]
