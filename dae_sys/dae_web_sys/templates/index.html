@@ -1,0 +1,62 @@
+{% load static %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAE_SYSTEMS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    <div>
+    <body class="fundo">
+    <div></div>
+    <h1> SIMULADOR DE PREÇOS </h1>
+    
+    <div class="centro">
+   
+
+            <br> <br>
+             
+            <div class="dropdown">
+                <div class="dropdown-button"> Selecione a Região de Integração ⇓ </div>
+                <div class="dropdown-content">
+                  {% for r in r %}
+                  <div class="dropdown-item"> <a href="{% url "reg_fil" r.regiao %}"><option value="{{r.regiao}}">{{r.regiao}}</option></a>  </div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <br> <br> 
+              <label for="">Município</label>
+
+
+              <br>
+              
+              <select id="select">
+                {% for m in m %}
+                <option value="opcao3">{{m.municipio}}</option>
+                {% endfor %}
+              </select>
+
+              <br> <br>
+
+              <label for="">Ano</label>
+              <select id="select">
+                {% for a in anos %}
+                <option value="{{a}}">{{a}}</option>
+                {% endfor %}
+              </select>
+
+              <br> <br>
+
+
+              
+              <br>
+              <button class="bt">Consultar</button>
+  
+                    
+    </div>
+
+</body>
+
+</html>

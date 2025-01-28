@@ -1,0 +1,41 @@
+{% load static %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAE_SYSTEMS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    <div>
+    <body class="fundo">
+    <div></div>
+    <h1> SIMULADOR DE PREÇOS </h1>
+    <div class="centro">
+        <br> <br><br> <br>
+        <form action="">
+
+
+
+         
+            
+            
+                  <br> <br>
+
+
+            <label for="">Município</label>
+            
+            <select name="" id="">
+                {% for m in m %}
+                <option value="{{m.municipio}}"> {{m.municipio}} </option>
+                {% endfor %}
+            </select>
+            <br>
+            <button class="bt">Consultar</button>
+            
+        </form>
+    </div>
+
+</body>
+
+</html>
