@@ -4,7 +4,7 @@ from dae_web_sys import models
 
 @admin.register(models.regiao)
 class regiao(admin.ModelAdmin):
-    list_display = 'id','regiao',
+    list_display = 'id','regiao'
 
 @admin.register(models.regiao)
 class regiao_municipio(admin.ModelAdmin):
@@ -12,4 +12,4 @@ class regiao_municipio(admin.ModelAdmin):
 
 @admin.register(models.regiao)
 class custos(admin.ModelAdmin):
-    list_display = 'id', 'mesorreg' , 'regint' , 'municipio', 'modalidade', 'tecnologia','cunittransp', 'cmanut',
+    list_display = 'id', 'mesorreg' , 'regint' , 'municipio', 'modalidade', 'tecnologia','cunittransp', 'cmanut'
