@@ -8,7 +8,7 @@ class regiao(admin.ModelAdmin):
 
 @admin.register(models.regiao)
 class regiao_municipio(admin.ModelAdmin):
-    list_display = 'id', 'municipio','regiao',
+    list_display = 'id', 'regiao', 'municipio'
 
 @admin.register(models.regiao)
 class custos(admin.ModelAdmin):
