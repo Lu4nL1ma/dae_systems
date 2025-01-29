@@ -8,8 +8,8 @@ class regiao(admin.ModelAdmin):
 
 @admin.register(models.regiao)
 class regiao_municipio(admin.ModelAdmin):
-    list_display = 'id', 'municpio','regiao',
+    list_display = 'id', 'municipio','regiao',
 
 @admin.register(models.regiao)
 class custos(admin.ModelAdmin):
-    list_display = 'id', 'mesorreg' , 'regint' , 'municpio', 'modalidade', 'tecnologia','cunittransp', 'cmanut',
+    list_display = 'id', 'mesorreg' , 'regint' , 'municipio', 'modalidade', 'tecnologia','cunittransp', 'cmanut',
