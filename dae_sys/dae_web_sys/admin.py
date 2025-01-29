@@ -6,4 +6,10 @@ from dae_web_sys import models
 class regiao(admin.ModelAdmin):
     list_display = 'id','regiao',
 
-# Register your models here.
+@admin.register(models.regiao)
+class regiao_municipio(admin.ModelAdmin):
+    list_display = 'id', 'municpio','regiao',
+
+@admin.register(models.regiao)
+class custos(admin.ModelAdmin):
+    list_display = 'id', 'mesorreg' , 'regint' , 'municpio', 'modalidade', 'tecnologia','cunittransp', 'cmanut',
