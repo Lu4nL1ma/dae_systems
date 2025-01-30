@@ -37,11 +37,11 @@ def home_filtrada(request, r_regiao):
         
         return render(request, "index.html", context)
 
-def custos(request):
+def cust_muni(request):
 
-        c = custos.objects.all()
+        qry = custos.objects.all()
 
-        df = pd.DataFrame(list(c.values()))
+        df = pd.DataFrame(list(qry.values()))
 
         df['preço_final'] = 1000
 
