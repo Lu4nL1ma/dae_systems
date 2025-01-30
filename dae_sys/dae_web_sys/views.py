@@ -39,13 +39,11 @@ def home_filtrada(request, r_regiao):
 
 def custos(request):
 
-        cust = custos.objects.all()
+        c = custos.objects.all()
 
-        df = pd.DataFrame(list(cust.values()))
+        df = pd.DataFrame(list(c.values()))
 
         df['preço_final'] = 1000
-
-        conn.close()
 
         context = {'df': df}
 
