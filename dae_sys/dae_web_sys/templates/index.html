@@ -33,7 +33,7 @@
               <br>
               <select id="select">
                 {% for m in m %}
-                <option value="opcao3">{{m.municipio}}</option>
+                <option value="{{m.municipio}}">{{m.municipio}}</option>
                 {% endfor %}
               </select>
 
@@ -55,7 +55,7 @@
 
 
               <form action="{% url "custos" %}" method="get">
-              <button class="bt">Consultar</button>
+              <button class="bt"> Consultar Custos </button>
               </form>
   
                     

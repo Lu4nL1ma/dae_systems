@@ -23,11 +23,14 @@
                     <tr>
                       <th>Mbps</th>
                       <th>Tecnologia</th>
+                      <th>Preço Final</th>
+
                     </tr>
                     {% for c in df.itertuples %}
                     <tr>
                       <td>{{c.mbps}}</td>
                       <td>{{c.tecnologia}}</td>
+                      <td>{{c.preco_final}}</td>
                     </tr>
                     {% endfor %}
                   </table>

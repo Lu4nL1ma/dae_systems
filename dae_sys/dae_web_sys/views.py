@@ -43,7 +43,15 @@ def cust_muni(request):
 
         df = pd.DataFrame(list(qry.values()))
 
-        df['preço_final'] = 1000
+        def cal_pref(row):
+                
+                somar = ( (row['cunittransp'] * row['mbps'] ) + row['cmanut']) / (1 - 0.1 - 0.2 - 0.1704)
+                
+                somar = round(somar, 2)
+                
+                return somar
+
+        df['preço_final'] = df.apply(cal_pref, axis=1)
 
         context = {'df': df}
 
