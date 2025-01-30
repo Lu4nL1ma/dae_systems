@@ -48,8 +48,6 @@ def custos(request):
 
         df['preço_final'] = 1000
 
-        print(df)
-
         conn.close()
 
         context = {'df': df}
