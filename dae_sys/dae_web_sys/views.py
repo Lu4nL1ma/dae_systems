@@ -51,7 +51,7 @@ def cust_muni(request):
 
                 return somar
 
-        df['preço_final'] = df.apply(cal_pref, axis=1)
+        df['preco_final'] = df.apply(cal_pref, axis=1)
 
         context = {'df': df}
 
