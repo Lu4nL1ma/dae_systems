@@ -27,35 +27,31 @@
                   {% endfor %}
                 </div>
               </div>
-
-              <br> <br> 
-              <label for="">Município</label>
-              <br>
-              <select id="select">
-                {% for m in m %}
-                <option value="{{m.municipio}}">{{m.municipio}}</option>
-                {% endfor %}
-              </select>
-
-              <br> <br>
-
-              <label for="">Ano</label>
-              <br>
-              <select id="select">
-                {% for a in anos %}
-                <option value="{{a}}">{{a}}</option>
-                {% endfor %}
-              </select>
-
-              <br> <br>
-
-
-              
-              <br>
-
-
               <form action="{% url "custos" %}" method="get">
-              <button class="bt"> Consultar Custos </button>
+                  <br> <br> 
+                  <label for="">Município</label>
+                  <br>
+                  <select name="muni" id="select">
+                    {% for m in m %}
+                    <option value="{{m.municipio}}">{{m.municipio}}</option>
+                    {% endfor %}
+                  </select>
+
+                  <br> <br>
+
+                  <label for="">Ano</label>
+                  <br>
+                  <select id="select">
+                    {% for a in anos %}
+                    <option value="{{a}}">{{a}}</option>
+                    {% endfor %}
+                  </select>
+
+                  <br> <br>
+
+                  <br>
+                  
+                  <button type="submit" class="bt"> Consultar </button>
               </form>
   
                     

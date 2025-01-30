@@ -39,7 +39,9 @@ def home_filtrada(request, r_regiao):
 
 def cust_muni(request):
 
-        qry = custos.objects.all()
+        muni = request.POST.get('muni')
+
+        qry = custos.objects.filter(municipio=muni)
 
         df = pd.DataFrame(list(qry.values()))
 
