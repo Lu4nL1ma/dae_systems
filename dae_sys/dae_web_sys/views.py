@@ -41,7 +41,7 @@ def cust_muni(request):
 
         muni = request.POST.get('muni')
 
-        qry = custos.objects.filter(municipio=muni)
+        qry = custos.objects.all()
 
         df = pd.DataFrame(list(qry.values()))
 
@@ -55,6 +55,8 @@ def cust_muni(request):
 
         df['preco_final'] = df.apply(cal_pref, axis=1)
 
-        context = {'df': df}
+        df_filtrado = df[df['municipio'] == muni ]
+
+        context = {'df': df_filtrado}
 
         return render(request, "resultado.html", context)
