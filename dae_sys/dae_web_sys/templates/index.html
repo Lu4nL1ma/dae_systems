@@ -9,7 +9,7 @@
 </head>
     <div>
     <body class="fundo">
-    <div> <img src="{% static 'imagens/logo.jpg' %}" alt=""> </div>
+    <div> <img class="img" src="{% static 'imagens/logo' %}" alt="">  <div class="dae"> DIVISÃO DE ANÁLISE ECONÔMICA </div>   </div>
     <h1> SIMULADOR DE PREÇOS </h1>
     
     <div class="centro">
@@ -52,7 +52,11 @@
 
               
               <br>
+
+
+              <form action="{% url "custos" %}" method="get">
               <button class="bt">Consultar</button>
+              </form>
   
                     
     </div>

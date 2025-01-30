@@ -2,7 +2,8 @@ from django.shortcuts import render
 from dae_web_sys.models import regiao, regiao_municipio
 from datetime import datetime
 from django.urls import reverse
-import json
+import sqlite3
+import pandas as pd
 
 # Create your views here.
 
@@ -37,3 +38,20 @@ def home_filtrada(request, r_regiao):
         
         return render(request, "index.html", context)
 
+def custos(request):
+
+        conn = sqlite3.connect('db.sqlite3')
+
+        query = "SELECT * FROM dae_web_sys_custos"
+
+        df = pd.read_sql_query(query, conn)
+
+        df['preço_final'] = 1000
+
+        print(df)
+
+        conn.close()
+
+        context = {'df': df}
+
+        return render(request, "resultado.html", context)

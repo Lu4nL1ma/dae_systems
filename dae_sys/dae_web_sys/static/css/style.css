@@ -2,7 +2,7 @@
 
 body h1{text-align: center;
         color: white;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        font-family: Helvetica, sans-serif;}
 
 .centro{width: 1000px;
         height: 600px;
@@ -25,7 +25,7 @@ body h1{text-align: center;
         margin: 4px;
         font-size: 18px;
         z-index: 1;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: Helvetica, sans-serif;
       }
 
 .centro label{background-color: #102C74;
@@ -71,7 +71,7 @@ body h1{text-align: center;
   align-items: center;
   border: 1px solid;
   font-size: 16px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 .dropdown-button:hover {
@@ -118,3 +118,32 @@ body h1{text-align: center;
   width: 200px; /* Ajuste a largura conforme necessário */
   margin-bottom: 10px; /* Espaçamento entre os selects */
 }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: black;
+}
+
+.table th, td {
+  padding: 8px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.table th {
+  background-color: blue;
+}
+
+.img {width: 100px;
+      height: 90px;
+      position: relative;
+      left: 100px;}
+
+.dae {font-size: 18px;
+      color: #ddd;
+      position: relative;
+      left: 10px;
+      top: 4px;
+      font-weight: bold;
+      font-family: Helvetica, sans-serif;}

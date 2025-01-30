@@ -21,6 +21,7 @@ from dae_web_sys import views
 urlpatterns = [
     path('', views.home),
     path('admin/', admin.site.urls),
+    path('custos/', views.custos, name='custos'),
     path('<str:r_regiao>/', views.home_filtrada, name='reg_fil'),
     
 ]

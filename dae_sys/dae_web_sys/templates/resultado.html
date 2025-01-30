@@ -1,0 +1,39 @@
+{% load static %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAE_SYSTEMS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    <div>
+    <body class="fundo">
+      <div> <img class="img" src="{% static 'imagens/logo' %}" alt="">  <div class="dae"> DIVISÃO DE ANÁLISE ECONÔMICA </div>   </div>
+    <h1> SIMULADOR DE PREÇOS </h1>
+    
+    <div class="centro">
+   
+
+            <br> <br>
+             
+                  <div class="table">
+   
+                  <table>
+                    <tr>
+                      <th>Mbps</th>
+                      <th>Tecnologia</th>
+                    </tr>
+                    {% for c in df.itertuples %}
+                    <tr>
+                      <td>{{c.mbps}}</td>
+                      <td>{{c.tecnologia}}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                 </div>            
+    </div>
+
+</body>
+
+</html>
