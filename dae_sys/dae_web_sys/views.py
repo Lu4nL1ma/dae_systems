@@ -45,10 +45,10 @@ def cust_muni(request):
 
         def cal_pref(row):
                 
-                somar = ( (row['cunittransp'] * row['mbps'] ) + row['cmanut']) / (1 - 0.1 - 0.2 - 0.1704)
-                
+                somar = ( float((row['cunittransp']) * float(row['mbps']) ) + float(row['cmanut'])) / (float(1) - 0.1 - 0.2 - 0.1704)
+
                 somar = round(somar, 2)
-                
+
                 return somar
 
         df['preço_final'] = df.apply(cal_pref, axis=1)
