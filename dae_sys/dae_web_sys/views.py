@@ -43,8 +43,6 @@ def cust_muni(request):
 
                 muni = request.POST.get('muni')
 
-                print(f"AAAAAAQUI: {muni}")
-
                 qry = custos.objects.all()
 
                 df = pd.DataFrame(list(qry.values()))
@@ -60,8 +58,6 @@ def cust_muni(request):
                 df['preco_final'] = df.apply(cal_pref, axis=1)
 
                 df = df[df['municipio'] == muni ]
-
-                print(df)
 
                 context = {'df': df}
 
