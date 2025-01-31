@@ -39,24 +39,30 @@ def home_filtrada(request, r_regiao):
 
 def cust_muni(request):
 
-        muni = request.POST.get('muni')
+        if request.method == 'POST':
 
-        qry = custos.objects.all()
+                muni = request.POST.get('muni')
 
-        df = pd.DataFrame(list(qry.values()))
+                print(f"AAAAAAQUI: {muni}")
 
-        def cal_pref(row):
-                
-                somar = ( float((row['cunittransp']) * float(row['mbps']) ) + float(row['cmanut'])) / (float(1) - 0.1 - 0.2 - 0.1704)
+                qry = custos.objects.all()
 
-                somar = round(somar, 2)
+                df = pd.DataFrame(list(qry.values()))
 
-                return somar
+                def cal_pref(row):
+                        
+                        somar = ( float((row['cunittransp']) * float(row['mbps']) ) + float(row['cmanut'])) / (float(1) - 0.1 - 0.2 - 0.1704)
 
-        df['preco_final'] = df.apply(cal_pref, axis=1)
+                        somar = round(somar, 2)
 
-        df_filtrado = df[df['municipio'] == muni ]
+                        return somar
 
-        context = {'df': df_filtrado}
+                df['preco_final'] = df.apply(cal_pref, axis=1)
 
-        return render(request, "resultado.html", context)
+                df = df[df['municipio'] == muni ]
+
+                print(df)
+
+                context = {'df': df}
+
+                return render(request, "resultado.html", context)

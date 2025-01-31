@@ -21,20 +21,36 @@
    
                   <table>
                     <tr>
-                      <th>Mbps</th>
+                      <th>Mesorregião</th>
+                      <th>Região</th>
+                      <th>Município</th>
+                      <th>Modalidade</th>
                       <th>Tecnologia</th>
+                      <th>Mbps</th>
+                      <th>Transporte</th>
+                      <th>Manutenção</th>
                       <th>Preço Final</th>
 
                     </tr>
                     {% for c in df.itertuples %}
                     <tr>
-                      <td>{{c.mbps}}</td>
+                      <td>{{c.mesorreg}}</td>
+                      <td>{{c.regint}}</td>
+                      <td>{{c.municipio}}</td>
+                      <td>{{c.modalidade}}</td>
                       <td>{{c.tecnologia}}</td>
+                      <td>{{c.mbps}}</td>
+                      <td>{{c.cunittransp}}</td>
+                      <td>{{c.cmanut}}</td>
                       <td>{{c.preco_final}}</td>
+                      
                     </tr>
                     {% endfor %}
                   </table>
-                 </div>            
+
+                 </div>  
+                 
+                <div> <a href="{% url 'home' %}" class="btn-voltar"> Voltar </a> </div> 
     </div>
 
 </body>

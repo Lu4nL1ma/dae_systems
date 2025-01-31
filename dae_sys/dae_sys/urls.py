@@ -19,7 +19,7 @@ from django.urls import path
 from dae_web_sys import views
 
 urlpatterns = [
-    path('', views.home),
+    path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('custos/', views.cust_muni, name='custos'),
     path('<str:r_regiao>/', views.home_filtrada, name='reg_fil'),

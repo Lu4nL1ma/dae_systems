@@ -27,7 +27,8 @@
                   {% endfor %}
                 </div>
               </div>
-              <form action="{% url "custos" %}" method="get">
+              <form action="{% url "custos" %}" method="post">
+                {% csrf_token %}
                   <br> <br> 
                   <label for="">Município</label>
                   <br>
@@ -48,10 +49,8 @@
                   </select>
 
                   <br> <br>
-
-                  <br>
                   
-                  <button type="submit" class="bt"> Consultar </button>
+                  <button type="submit" class="btn"> Consultar </button>
               </form>
   
                     
