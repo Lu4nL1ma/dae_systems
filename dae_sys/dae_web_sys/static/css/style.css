@@ -5,7 +5,7 @@ body h1{text-align: center;
         font-family: Helvetica, sans-serif;}
 
 .centro{width: 1000px;
-        height: 600px;
+        height: 640px;
         background-color: aliceblue;
         margin: auto;
         text-align: center;
@@ -170,7 +170,7 @@ body h1{text-align: center;
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 100px;
+  top: 30px;
   cursor: pointer;
 }
 
@@ -197,4 +197,24 @@ body h1{text-align: center;
 .btn-voltar:hover {
   background-color: #0056b3; /* Cor de fundo ao passar o mouse */
 }
+
+.cent{ 
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 200px;}
+
+.cent label{
+        width: 100px;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 1;
+        font-family: Helvetica, sans-serif;
+        position: relative;
+        right: -230px;
+        margin: 4px;
+      }
+.cent input{
+     text-align: center;
+      }
 

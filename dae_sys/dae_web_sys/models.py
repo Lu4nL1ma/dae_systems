@@ -27,3 +27,9 @@ class custos(models.Model):
     cmanut = models.FloatField(default=0.0)
     class Meta:
         verbose_name = 'Custos dos Serviço'
+
+class reajuste(models.Model):
+    ano = models.CharField(max_length=40, default='')
+    indice = models.FloatField(default=0.0)
+    class Meta:
+        verbose_name = 'Reajuste'

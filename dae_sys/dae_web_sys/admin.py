@@ -19,3 +19,9 @@ class custos(admin.ModelAdmin):
     list_display = 'id', 'mesorreg' , 'regint' , 'municipio', 'modalidade', 'tecnologia','cunittransp', 'cmanut'
     class Meta:
         verbose_name = "Custo"
+
+@admin.register(models.reajuste)
+class reajuste(admin.ModelAdmin):
+    list_display = 'ano', 'indice' 
+    class Meta:
+        verbose_name = "Custo"

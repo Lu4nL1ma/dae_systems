@@ -16,7 +16,7 @@
    
 
             <br> <br>
-             
+            
             <div class="dropdown">
               <label for="">Região de Integração</label>
               <br>
@@ -40,7 +40,67 @@
 
                   <br> <br>
 
-                  <label for="">Ano</label>
+                  <label for=""> Serviço </label>
+                  <br>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let radios = document.querySelectorAll('input[name="servico"]');
+                        let extraInput = document.getElementById("extraInput");
+                        let extraInput2 = document.getElementById("extraInput2"); // Novo elemento H3
+                        let extraInput3 = document.getElementById("extraInput3");
+                        let extraInput4 = document.getElementById("extraInput4");
+                    
+                        radios.forEach(radio => {
+                            radio.addEventListener("change", function() {
+                                if (this.value === "Internet") {
+                                    extraInput.style.display = "block";
+                                    extraInput2.style.display = "block";
+                                    extraInput3.style.display = "none";
+                                    extraInput4.style.display = "none"
+                                    
+                                
+                                }
+                                
+                                else if (this.value === "Link de Dados") {
+                                    extraInput3.style.display = "block";
+                                    extraInput4.style.display = "block"
+                                    extraInput.style.display = "none";
+                                    extraInput2.style.display = "none"
+                              
+                              }
+
+                                else {
+                                    extraInput.style.display = "block";
+                                    extraInput2.style.display = "block";
+                                    extraInput3.style.display = "block";
+                                    extraInput4.style.display = "block";
+                                }
+                            });
+                        });
+                    });
+                    </script>
+                    
+                    {% for s in servi %}
+                        <input type="radio" name="servico" value="{{ s }}"> {{ s }}
+                    {% endfor %}
+                    
+                    <br>
+                    <!-- Campo de texto oculto por padrão -->
+                     <div class="cent">
+                    <label id="extraInput2"  style="display: none;"> Mbps Internet </label>
+                    <input type="text" class="cent" name="mb_net" id="extraInput" style="display: none;">
+
+                    <label id="extraInput3" style="display: none;"> Mbps Dados </label>
+                    <input type="text" name="mb_link" class="cent" id="extraInput4" style="display: none;">
+                      </div>
+   
+                    
+
+                  
+                  <br> <br>
+                  
+                  <label for=""> Ano </label>
                   <br>
                   <select id="select">
                     {% for a in anos %}
@@ -48,11 +108,10 @@
                     {% endfor %}
                   </select>
 
-                  <br> <br>
+                  <br> 
                   
                   <button type="submit" class="btn"> Consultar </button>
               </form>
-  
                     
     </div>
 
