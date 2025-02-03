@@ -7,6 +7,8 @@ import pandas as pd
 # Create your views here.
 
 def home(request):
+
+        var = ''
         
         ano_atual = datetime.now().year
         
@@ -15,15 +17,14 @@ def home(request):
         reg = regiao.objects.all()
         
         munis = regiao_municipio.objects.all()
-
-        for i in reg:
-                teste = i.id
         
-        context = {'r': reg, 'anos': anos,'m': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados']}
+        context = {'r': reg, 'anos': anos,'m': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados'], 'var': var}
         
         return render(request, "index.html", context)
 
 def home_filtrada(request, r_regiao):
+
+        var = r_regiao
         
         ano_atual = datetime.now().year
         
@@ -33,7 +34,7 @@ def home_filtrada(request, r_regiao):
         
         munis = regiao_municipio.objects.filter(regiao=r_regiao)
         
-        context = {'r': reg, 'anos': anos,'m': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados']}
+        context = {'r': reg, 'anos': anos,'m': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados'], 'var': var}
         
         return render(request, "index.html", context)
 

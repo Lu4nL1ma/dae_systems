@@ -20,7 +20,12 @@
             <div class="dropdown">
               <label for="">Região de Integração</label>
               <br>
+                {% if var == "" %}
                 <div class="dropdown-button"> Selecione ⇓ </div>
+                {% else %}
+                <div class="dropdown-button"> {{var}} </div>
+                {% endif %}
+
                 <div class="dropdown-content">
                   {% for r in r %}
                   <div class="dropdown-item"> <a href="{% url "reg_fil" r.regiao %}"><option value="{{r.regiao}}">{{r.regiao}}</option></a>  </div>
