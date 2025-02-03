@@ -4,7 +4,14 @@ body h1{text-align: center;
         color: white;
         font-family: Helvetica, sans-serif;}
 
-.centro{width: 1000px;
+.centro_result{width: 1000px;
+        height: 640px;
+        background-color: aliceblue;
+        margin: auto;
+        text-align: center;
+        }
+
+.centro{width: 700px;
         height: 640px;
         background-color: aliceblue;
         margin: auto;
