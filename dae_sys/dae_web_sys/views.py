@@ -8,6 +8,12 @@ import pandas as pd
 
 def home(request):
 
+        
+        return render(request, "index.html")
+
+
+def form(request):
+
         var = ''
         
         ano_atual = datetime.now().year
@@ -20,9 +26,9 @@ def home(request):
         
         context = {'r': reg, 'anos': anos,'m': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados'], 'var': var}
         
-        return render(request, "index.html", context)
+        return render(request, "form.html", context)
 
-def home_filtrada(request, r_regiao):
+def form_filtrado(request, r_regiao):
 
         var = r_regiao
         
