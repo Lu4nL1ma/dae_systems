@@ -8,8 +8,13 @@ import pandas as pd
 
 def home(request):
 
-        
-        return render(request, "index.html")
+        if request.method == 'GET':
+                
+                variavel = "Olá, bom dia. O que será do mundo, olá mundo???"
+
+                context = {'var': variavel}
+                        
+                return render(request, "index.html", context)
 
 
 def form(request):
