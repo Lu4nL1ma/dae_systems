@@ -10,32 +10,66 @@
     <div>
     <body class="fundo">
     <div> <img class="img" src="{% static 'imagens/logo' %}" alt="">  <div class="dae"> DIVISÃO DE ANÁLISE ECONÔMICA </div>   </div>
-    <h1> HOME </h1>
+    <h1> SIMULADOR DE PREÇOS </h1>
     
     <div class="centro">
-        
 
-        <div>
+        <br> <br>
 
-
+        <form action="{% url "custos" %}" method="post">
             
+            {% csrf_token %}
+
+            <label for="regiao">Região</label>
+            <select id="regiao" name="regiao">
+                {% for r in regioes %}
+                    <option value="{{ r.regiao }}">{{ r.regiao }}</option>
+                {% endfor %}
+            </select>
             
+            <br> <br>
 
+            <label for="municipio">Município</label>
+            <select id="municipio" name="municipio" >
+                {% for m in munis %}
+                <option value="{{ m.municipio }}">{{ m.municipio }}</option>
+                {% endfor %}
+            </select>
+    
+        <script src="{% static 'js/script.js' %}" ></script>
 
+        <label for=""> Serviços </label>
 
+        {% for s in servi %}
+                        <input type="radio" name="servico" value="{{ s }}"> {{ s }}
+                    {% endfor %}
+                    
+                    <br>
+                    <!-- Campo de texto oculto por padrão -->
+                     <div class="cent">
+                    <label id="extraInput2"  style="display: none;"> Mbps Internet </label>
+                    <input type="text" class="cent" name="mb_net" id="extraInput" style="display: none;">
 
-
-
-        
-        
-
-
-         <input type="text">  <button> Enviar </button>
-        
-        </div>
+                    <label id="extraInput3" style="display: none;"> Mbps Dados </label>
+                    <input type="text" name="mb_link" class="cent" id="extraInput4" style="display: none;">
+                      </div>
    
+                    
 
-            
+                  
+                  <br> <br>
+                  
+                  <label for=""> Ano </label>
+                  <select id="select">
+                    {% for a in anos %}
+                    <option value="{{a}}">{{a}}</option>
+                    {% endfor %}
+                  </select>
+
+                  <br>
+                  
+                  <button type="submit" class="btn"> Consultar </button> 
+         </form>
                     
     </div>
 

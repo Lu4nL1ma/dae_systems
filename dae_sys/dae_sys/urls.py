@@ -19,10 +19,9 @@ from django.urls import path
 from dae_web_sys import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('form/', views.form, name='form'),
+    path('', views.formulario, name='form'),
     path('admin/', admin.site.urls),
     path('custos/', views.cust_muni, name='custos'),
-    path('<str:r_regiao>/', views.form_filtrado, name='reg_fil'),
+    path('carregar-municipios/', views.carregar_municipios, name='reg_fil'),
     
 ]
