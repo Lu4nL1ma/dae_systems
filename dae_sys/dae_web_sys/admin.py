@@ -26,7 +26,7 @@ class reajuste(admin.ModelAdmin):
     class Meta:
         verbose_name = "Custo"
 
-@admin.register(models.reajuste)
+@admin.register(models.mesorregiao)
 class mesorregiao(admin.ModelAdmin):
     list_display = 'id','mesorregiao' 
     class Meta:
