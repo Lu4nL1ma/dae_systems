@@ -1,4 +1,5 @@
 import locale
+from dae_web_sys.models import reajuste
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')  # Exemplo: Brasi
 
@@ -11,3 +12,15 @@ def cal_pref(row):
                 
 def formata_reais(valor):
     return locale.currency(valor, grouping=True)
+
+
+def reajuste(valor):
+  ajustes = reajuste.objects.values_list('indice', flat=True)
+  ajustes = list(ajustes)
+  ano = 2023 - 2021
+  for i in range(ano):
+    valor   
+    calculo = valor * (1 + ajustes[i])
+    valor = calculo
+  return round(valor,2)
+
