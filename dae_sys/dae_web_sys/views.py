@@ -63,6 +63,10 @@ def cust_muni(request):
 
                         df = df[df['municipio'] == muni ]
 
+                        df['cunittransp'] = df['cunittransp'].map(formata_reais)
+
+                        df['preco_final'] = df['preco_final'].map(formata_reais)
+
                         context = {'df': df}
 
                         return render(request, "resultado.html", context)
