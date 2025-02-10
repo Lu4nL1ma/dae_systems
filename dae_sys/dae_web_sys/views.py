@@ -65,6 +65,8 @@ def cust_muni(request):
 
                         df['cunittransp'] = df['cunittransp'].map(formata_reais)
 
+                        df['cmanut'] = df['cmanut'].map(formata_reais)
+
                         df['preco_final'] = df['preco_final'].map(formata_reais)
 
                         context = {'df': df}
