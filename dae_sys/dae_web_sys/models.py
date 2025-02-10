@@ -33,3 +33,8 @@ class reajuste(models.Model):
     indice = models.FloatField(default=0.0)
     class Meta:
         verbose_name = 'Reajuste'
+
+class mesorregiao(models.Model):
+    mesorregiao = models.CharField(max_length=40, default='')
+    class Meta:
+        verbose_name = 'Mesorregiõe'
