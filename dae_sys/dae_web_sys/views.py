@@ -3,7 +3,7 @@ from dae_web_sys.models import regiao, regiao_municipio, custos
 from datetime import datetime
 from django.urls import reverse
 from django.http import JsonResponse
-from .utils.functions import atualizar, atualizar_mbps, cal_pref
+from .utils.functions import cal_pref
 import pandas as pd
 
 # Create your views here.
@@ -55,9 +55,9 @@ def cust_muni(request):
 
                 if mb_net != None:
 
-                        df['mbps'] = df.apply(atualizar_mbps(df, mb_link), axis=1)
+                        df['mbps'] = df['mbps'].map(lambda x: int(mb_link))
 
-                        df['cunittransp'] = df.apply(atualizar(df, mb_link), axis=1)
+                        df['cunittransp'] = df['cunittransp'].map(lambda x: x * int(mb_link))
 
                         df['preco_final'] = df.apply(cal_pref, axis=1)
 
