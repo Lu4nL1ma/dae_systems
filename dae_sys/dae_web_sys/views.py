@@ -3,7 +3,7 @@ from dae_web_sys.models import regiao, regiao_municipio, custos
 from datetime import datetime
 from django.urls import reverse
 from django.http import JsonResponse
-from .utils.functions import cal_pref, formata_reais, reajuste
+from .utils.functions import cal_pref, formata_reais, updt_valor
 import pandas as pd
 
 # Create your views here.
