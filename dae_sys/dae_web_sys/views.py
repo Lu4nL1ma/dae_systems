@@ -76,8 +76,11 @@ def cust_muni(request):
                                df['preco_final'] = df['preco_final'].apply(updt_valor, args=(int(ano),))
 
                                df['preco_final'] = df['preco_final'].map(formata_reais)
-                               
 
+                        else:
+                                df['preco_final'] = df['preco_final'].map(formata_reais)
+
+                               
                         context = {'df': df}
 
                         return render(request, "resultado.html", context)
