@@ -23,7 +23,11 @@ def updt_valor(valor, a):
   ano = a - 2021
   
   for i in range(ano):
+    
     valor
-    calculo = valor * (1 + ( ajustes[i] / 100 ))
+
+    calculo = float(valor) * (1 + ( float(ajustes[i]) / 100 ))
+
     valor = calculo
+
   return round(valor,2)
