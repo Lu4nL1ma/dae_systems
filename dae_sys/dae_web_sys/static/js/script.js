@@ -1,5 +1,4 @@
-//script de carregar o municipios
-// Adicione seu JavaScript aqui
+//script de carregar os municipios
 document.getElementById('regiao').addEventListener('change', function() {
     const regiaoId = this.value;
     const municipioSelect = document.getElementById('municipio');
