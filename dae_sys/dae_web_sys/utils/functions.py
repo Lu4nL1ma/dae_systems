@@ -15,6 +15,8 @@ def cal_pref(row):
     return somar
                 
 def formata_reais(valor):
+    valor = 
+
     return locale.currency(valor, grouping=True)
 
 def reajuste(valor, a):

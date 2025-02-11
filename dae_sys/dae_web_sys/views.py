@@ -75,7 +75,7 @@ def cust_muni(request):
 
                         if int(ano) > 2021:
                                
-                               df['preco_final'] = df['preco_final'].map(formata_reais)
+                               df['preco_final'] = df['preco_final'].apply(reajuste, args=(ano,))
                                
 
                         context = {'df': df}
