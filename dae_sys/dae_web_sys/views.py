@@ -3,7 +3,7 @@ from dae_web_sys.models import regiao, regiao_municipio, custos
 from datetime import datetime
 from django.urls import reverse
 from django.http import JsonResponse
-from .utils.functions import cal_pref, formata_reais, updt_valor
+from .utils.functions import cal_pref, formata_reais, updt_valor, atuali_transp
 import pandas as pd
 
 # Create your views here.
@@ -49,19 +49,17 @@ def cust_muni(request):
 
                 ano = request.POST.get('ano')
 
-                print(ano)
-
                 qry = custos.objects.all()
 
                 df = pd.DataFrame(list(qry.values()))
                 
                 #aplicando mudanças no df
 
-                if mb_net != None:
+                if mb_link != None:
 
                         df['mbps'] = df['mbps'].map(lambda x: int(mb_link))
 
-                        df['cunittransp'] = df['cunittransp'].map(lambda x: x * int(mb_link))
+                        df['cunittransp'] = df['cunittransp'].apply(atuali_transp, args=(mb_link,))
 
                         df['preco_final'] = df.apply(cal_pref, axis=1)
 
@@ -81,7 +79,7 @@ def cust_muni(request):
                                 df['preco_final'] = df['preco_final'].map(formata_reais)
 
                                
-                        context = {'df': df}
+                        context = {'df': df, 'ano_busca': ano}
 
                         return render(request, "resultado.html", context)
                 

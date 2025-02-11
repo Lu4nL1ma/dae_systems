@@ -1,10 +1,6 @@
 import locale
 from dae_web_sys.models import reajuste
 
-ajustes = reajuste.objects.values_list('indice', flat=True)
-
-print(ajustes)
-
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')  # Exemplo: Brasi
 
 def cal_pref(row):
@@ -33,3 +29,118 @@ def updt_valor(valor, a):
     valor = calculo
 
   return round(valor,2)
+
+def atuali_transp(row, mb_link):
+   
+   mb_link = int(mb_link)
+
+   if mb_link <= 10:
+      
+      result = float(row) * float(mb_link)
+
+      return round(result,2)
+      
+   
+   elif mb_link > 10 and mb_link <= 20:
+   
+      mb_link = mb_link * 0.9803
+      
+      row = float(mb_link) * float(row)
+      
+      result = row
+
+      return round(result,2)
+   
+   elif mb_link > 20 and mb_link <= 40:
+      
+        mb_link = mb_link * 0.9606
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 40 and mb_link <= 80:
+      
+        mb_link = mb_link * 0.9417
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 80 and mb_link <= 160:
+      
+        mb_link = mb_link * 0.9228
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 160 and mb_link <= 320:
+      
+        mb_link = mb_link * 0.9047
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 320 and mb_link <= 640:
+      
+        mb_link = mb_link * 0.8866
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 640 and mb_link <= 1280:
+      
+        mb_link = mb_link * 0.8685
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 1280 and mb_link <= 2560:
+      
+        mb_link = mb_link * 0.8512
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 2560 and mb_link <= 5120:
+      
+        mb_link = mb_link * 0.8339
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+   
+   elif mb_link > 5120 and mb_link <= 10240:
+      
+        mb_link = mb_link * 0.8173
+        
+        row = float(mb_link) * float(row)
+        
+        result = row
+
+        return round(result,2)
+        
+
+
+      
