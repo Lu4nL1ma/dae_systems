@@ -71,11 +71,11 @@ def cust_muni(request):
 
                         df['cmanut'] = df['cmanut'].map(formata_reais)
 
-                        df['preco_final'] = df['preco_final'].map(formata_reais)
-
                         if int(ano) > 2021:
                                
                                df['preco_final'] = df['preco_final'].apply(updt_valor, args=(int(ano),))
+
+                               df['preco_final'] = df['preco_final'].map(formata_reais)
                                
 
                         context = {'df': df}

@@ -13,10 +13,12 @@ def cal_pref(row):
     somar = round(somar, 2)
 
     return somar
+    
                 
 def formata_reais(valor):
 
     return locale.currency(valor, grouping=True)
+
 
 def updt_valor(valor, a):
   ajustes = reajuste.objects.values_list('indice', flat=True)
