@@ -75,7 +75,7 @@ def cust_muni(request):
 
                         if int(ano) > 2021:
                                
-                               df['preco_final'] = df['preco_final'].apply(updt_valor, args=(ano,))
+                               df['preco_final'] = df['preco_final'].apply(updt_valor, args=(int(ano),))
                                
 
                         context = {'df': df}
