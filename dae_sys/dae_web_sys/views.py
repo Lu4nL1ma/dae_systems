@@ -3,7 +3,7 @@ from dae_web_sys.models import regiao, regiao_municipio, custos
 from datetime import datetime
 from django.urls import reverse
 from django.http import JsonResponse
-from .utils.functions import cal_pref, formata_reais
+from .utils.functions import cal_pref, formata_reais, reajuste
 import pandas as pd
 
 # Create your views here.
@@ -47,6 +47,10 @@ def cust_muni(request):
 
                 mb_net = request.POST.get('mb_net')
 
+                ano = request.POST.get('ano')
+
+                print(ano)
+
                 qry = custos.objects.all()
 
                 df = pd.DataFrame(list(qry.values()))
@@ -68,6 +72,11 @@ def cust_muni(request):
                         df['cmanut'] = df['cmanut'].map(formata_reais)
 
                         df['preco_final'] = df['preco_final'].map(formata_reais)
+
+                        if int(ano) > 2021:
+                               
+                               df['preco_final'] = df['preco_final'].map(formata_reais)
+                               
 
                         context = {'df': df}
 
