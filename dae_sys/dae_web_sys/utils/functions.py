@@ -18,7 +18,7 @@ def formata_reais(valor):
 
     return locale.currency(valor, grouping=True)
 
-def reajuste(valor, a):
+def updt_valor(valor, a):
   ajustes = reajuste.objects.values_list('indice', flat=True)
   ano = a - 2021
   
