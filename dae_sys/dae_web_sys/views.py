@@ -3,7 +3,11 @@ from dae_web_sys.models import regiao, regiao_municipio, custos
 from datetime import datetime
 from django.urls import reverse
 from django.http import JsonResponse
+<<<<<<< HEAD
 from .utils.functions import cal_pref
+=======
+from .utils.functions import cal_pref, formata_reais
+>>>>>>> 0e944158967e6cf4cfdd379348168806b50d73d9
 import pandas as pd
 
 # Create your views here.
@@ -62,6 +66,12 @@ def cust_muni(request):
                         df['preco_final'] = df.apply(cal_pref, axis=1)
 
                         df = df[df['municipio'] == muni ]
+
+                        df['cunittransp'] = df['cunittransp'].map(formata_reais)
+
+                        df['cmanut'] = df['cmanut'].map(formata_reais)
+
+                        df['preco_final'] = df['preco_final'].map(formata_reais)
 
                         context = {'df': df}
 

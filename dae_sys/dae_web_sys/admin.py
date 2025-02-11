@@ -22,6 +22,12 @@ class custos(admin.ModelAdmin):
 
 @admin.register(models.reajuste)
 class reajuste(admin.ModelAdmin):
-    list_display = 'ano', 'indice' 
+    list_display = 'id','ano', 'indice' 
     class Meta:
         verbose_name = "Custo"
+
+@admin.register(models.mesorregiao)
+class mesorregiao(admin.ModelAdmin):
+    list_display = 'id','mesorregiao' 
+    class Meta:
+        verbose_name = "Mesorregiõe"
