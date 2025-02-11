@@ -15,13 +15,13 @@ def cal_pref(row):
     return somar
                 
 def formata_reais(valor):
-    valor = 
 
     return locale.currency(valor, grouping=True)
 
 def reajuste(valor, a):
   ajustes = reajuste.objects.values_list('indice', flat=True)
   ano = a - 2021
+  
   for i in range(ano):
     valor
     calculo = valor * (1 + ( ajustes[i] / 100 ))

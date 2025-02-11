@@ -14,7 +14,7 @@ def formulario(request):
         
         ano_atual = datetime.now().year
         
-        anos = [(str(ano)) for ano in range(2020, ano_atual + 5)]
+        anos = [(str(ano)) for ano in range(2021, ano_atual + 5)]
         
         reg = regiao.objects.all()
         
