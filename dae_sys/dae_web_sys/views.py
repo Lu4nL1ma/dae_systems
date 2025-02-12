@@ -36,7 +36,7 @@ def carregar_por_mesorregiao(request):
 
         mesorreg = request.GET.get('meso_id')
 
-        municipios = regiao_municipio.objects.filter(regiao=mesorreg).values('municipio')
+        municipios = regiao_municipio.objects.filter(meso=mesorreg).values('municipio')
 
         return JsonResponse(list(municipios), safe=False)
     
