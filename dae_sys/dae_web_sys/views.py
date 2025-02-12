@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from dae_web_sys.models import regiao, regiao_municipio, custos
+from dae_web_sys.models import regiao, regiao_municipio, custos, mesorregiao
 from datetime import datetime
 from django.urls import reverse
 from django.http import JsonResponse
@@ -9,30 +9,37 @@ import pandas as pd
 # Create your views here.
 
 def formulario(request):
-
-        var = ''
         
         ano_atual = datetime.now().year
         
         anos = [(str(ano)) for ano in range(2021, ano_atual + 1)]
         
         reg = regiao.objects.all()
+
+        meso = mesorregiao.objects.all()
         
         munis = regiao_municipio.objects.all()
         
-        context = {'regioes': reg, 'anos': anos,'munis': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados'], 'var': var}
+        context = {'regioes': reg, 'anos': anos,'munis': munis, 'servi': ['Internet', 'Link de Dados', 'Internet + Link de Dados'], 'meso': meso, 'filter': ['Mesorregião','Região de Integração']}
         
         return render(request, "index.html", context)
 
-def carregar_municipios(request):
+def carregar_por_regiao(request):
 
-    regiao = request.GET.get('regiao_id')
+        regiao = request.GET.get('regiao_id')
 
+        municipios = regiao_municipio.objects.filter(regiao=regiao).values('municipio')
 
-    municipios = regiao_municipio.objects.filter(regiao=regiao).values('municipio')
+        return JsonResponse(list(municipios), safe=False)
 
-    return JsonResponse(list(municipios), safe=False)
+def carregar_por_mesorregiao(request):
 
+        mesorreg = request.GET.get('meso_id')
+
+        municipios = regiao_municipio.objects.filter(regiao=mesorreg).values('municipio')
+
+        return JsonResponse(list(municipios), safe=False)
+    
 
 
 def cust_muni(request):

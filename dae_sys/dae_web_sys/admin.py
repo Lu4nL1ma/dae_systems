@@ -10,7 +10,7 @@ class regiao(admin.ModelAdmin):
 
 @admin.register(models.regiao_municipio)
 class regiao_municipio(admin.ModelAdmin):
-    list_display = 'id', 'regiao', 'municipio'
+    list_display = 'id', 'meso','regiao', 'municipio'
     class Meta:
         verbose_name = "Município"
 

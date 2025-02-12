@@ -19,6 +19,13 @@ body h1{text-align: center;
               z-index: 1;
                 }
 
+.centro option{width: 400px;
+              text-align: center;
+              margin: 10px;
+              position: relative;
+              z-index: 1;
+                }
+
 
 .centro label{background-color: #102C74;
               padding: 5px;
@@ -214,4 +221,13 @@ body h1{text-align: center;
 .cent input{
      text-align: center;
       }
+
+.cent2 {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 290px;
+}
+              
+
 

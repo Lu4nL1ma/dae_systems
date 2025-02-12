@@ -4,7 +4,32 @@ document.getElementById('regiao').addEventListener('change', function() {
     const municipioSelect = document.getElementById('municipio');
 
     if (regiaoId) {
-        fetch(`/carregar-municipios/?regiao_id=${regiaoId}`)
+        fetch(`/carregar_por_regiao/?regiao_id=${regiaoId}`)
+            .then(response => response.json())
+            .then(data => {
+                municipioSelect.innerHTML = '';
+                data.forEach(municipio => {
+                    const option = document.createElement('option');
+                    option.value = municipio.municipio;
+                    option.textContent = municipio.municipio;
+                    municipioSelect.appendChild(option);
+                });
+                municipioSelect.disabled = false;
+            });
+    } else {
+        municipioSelect.innerHTML = '<option value="">Selecione um município</option>';
+        municipioSelect.disabled = true;
+    }
+});
+
+//por mesoregião
+
+document.getElementById('mesor').addEventListener('change', function() {
+    const mesorId = this.value;
+    const municipioSelect = document.getElementById('municipio');
+
+    if (mesorId) {
+        fetch(`/carregar_por_mesorregiao/?meso_id=${mesorId}`)
             .then(response => response.json())
             .then(data => {
                 municipioSelect.innerHTML = '';
@@ -58,4 +83,34 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+});
+
+
+//carregar o tipo de filtro
+
+document.addEventListener("DOMContentLoaded", function() {
+    const radios_filter = document.querySelectorAll('input[name="filter"]');
+    const mesor = document.getElementById('mesor');
+    const regiao = document.getElementById('regiao');
+
+    function atualizarExibicao() {
+        const filtroSelecionado = document.querySelector('input[name="filter"]:checked');
+        if (!filtroSelecionado) { // Nenhum filtro selecionado
+            mesor.style.display = "none";
+            regiao.style.display = "none";
+        } else if (filtroSelecionado.value === "Mesorregião") {
+            mesor.style.display = "block";
+            regiao.style.display = "none";
+        } else if (filtroSelecionado.value === "Região de Integração") {
+            regiao.style.display = "block";
+            mesor.style.display = "none";
+        } 
+    }
+
+    radios_filter.forEach(radio => {
+        radio.addEventListener("change", atualizarExibicao);
+    });
+
+    // Esconde elementos no carregamento inicial, caso nenhum radio esteja selecionado
+    atualizarExibicao(); 
 });

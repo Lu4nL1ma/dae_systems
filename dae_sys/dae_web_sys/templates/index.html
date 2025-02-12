@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAE_SYSTEMS</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
 </head>
     <div>
     <body class="fundo">
@@ -19,15 +20,26 @@
         <form action="{% url "custos" %}" method="post">
             
             {% csrf_token %}
-
-            <label for="regiao">Região</label>
-            <select id="regiao" name="regiao">
+            <label for=""> Filtrar Municípios Por: </label>
+            {% for f in filter %}
+                <input type="radio" name="filter" value="{{ f }}"> {{ f }}
+            {% endfor %}
+            
+            <br>
+            
+            <select class="cent2" id="mesor" name="mesor">
+                {% for msr in meso %}
+                    <option value="{{ msr.mesorregiao }}">{{ msr.mesorregiao }}</option>
+                {% endfor %}
+            </select>
+            
+            <select class="cent2" id="regiao" name="regiao">
                 {% for r in regioes %}
                     <option value="{{ r.regiao }}">{{ r.regiao }}</option>
                 {% endfor %}
             </select>
             
-            <br> <br>
+            <br>
 
             <label for="municipio">Município</label>
             <select id="municipio" name="municipio" >
@@ -35,12 +47,10 @@
                 <option value="{{ m.municipio }}">{{ m.municipio }}</option>
                 {% endfor %}
             </select>
-    
-        <script src="{% static 'js/script.js' %}" ></script>
 
-        <label for=""> Serviços </label>
+                    <label for=""> Serviços </label>
 
-        {% for s in servi %}
+                    {% for s in servi %}
                         <input type="radio" name="servico" value="{{ s }}"> {{ s }}
                     {% endfor %}
                     
@@ -53,10 +63,7 @@
                     <label id="extraInput3" style="display: none;"> Mbps Dados </label>
                     <input type="text" name="mb_link" class="cent" id="extraInput4" style="display: none;">
                       </div>
-   
-                    
 
-                  
                   <br> <br>
                   
                   <label for=""> Ano </label>
@@ -65,6 +72,8 @@
                     <option value="{{a}}">{{a}}</option>
                     {% endfor %}
                   </select>
+
+                  <script src="{% static 'js/script.js' %}" ></script>
 
                   <br>
                   

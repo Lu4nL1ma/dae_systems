@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.formulario, name='form'),
     path('admin/', admin.site.urls),
     path('custos/', views.cust_muni, name='custos'),
-    path('carregar-municipios/', views.carregar_municipios, name='reg_fil'),
+    path('carregar_por_regiao/', views.carregar_por_regiao, name='reg_fil'),
+   path('carregar_por_mesorregiao/', views.carregar_por_mesorregiao, name='mes_fil')
     
 ]

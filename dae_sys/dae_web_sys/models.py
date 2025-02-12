@@ -9,6 +9,7 @@ class regiao(models.Model):
 
 
 class regiao_municipio(models.Model):
+    meso = models.CharField(max_length=40, default='')
     regiao = models.CharField(max_length=40, default='')
     municipio = models.CharField(max_length=40, default='')
     
