@@ -16,8 +16,7 @@
 
     <h1>PREÇO EM {{ ano_busca }}</h1>
 
-    <main class="results-container">
-        <div class="table">
+        <div class="result-container">
             <table>
                 <tr>
                     <th>Mesorregião</th>
@@ -44,9 +43,7 @@
                 </tr>
                 {% endfor %}
             </table>
+            <a href="{% url 'form' %}" class="btn-voltar">Voltar</a>
         </div>
-
-        <a href="{% url 'form' %}" class="btn-voltar">Voltar</a>
-    </main>
 </body>
 </html>
