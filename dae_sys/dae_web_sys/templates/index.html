@@ -14,7 +14,7 @@
   </header>
 
   <main>
-    <h1>SIMULADOR DE PREÇOS</h1>
+    <h1>Simulador de Preços</h1>
 
     <div class="container">
       <form action="{% url 'custos' %}" method="post">
@@ -29,14 +29,14 @@
 
         <div class="form-group">
           <select name="mesor" id="mesor" style="display: none;">
-            <option value="">Selecione uma mesorregião</option>
+            <option value="">Selecione</option>
             {% for msr in meso %}
               <option value="{{ msr.mesorregiao }}">{{ msr.mesorregiao }}</option>
             {% endfor %}
           </select>
 
           <select name="regiao" id="regiao" style="display: none;">
-            <option value="">Selecione uma região</option>
+            <option value="">Selecione</option>
             {% for r in regioes %}
               <option value="{{ r.regiao }}">{{ r.regiao }}</option>
             {% endfor %}
@@ -82,7 +82,7 @@
 </body>
 
   <footer class="footer">
-  <p>&copy; 2025 DIVISÃO DE ANÁLISE ECONÔMICA.</p>
+  <p>&copy; 2025 Divisão de Análise Econômica.</p>
 </footer>
 
 </html>
