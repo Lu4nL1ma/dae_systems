@@ -191,58 +191,54 @@ input[type="checkbox"] {
   margin-right: 8px;
 }
 
-/* Estilo para a página de exibição dos resultados */
-.container {
+/* Contêiner de resultado */
+.result-container {
   background-color: aliceblue;
-  max-width: 1100px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: 40px auto;
   padding: 30px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.table {
-  overflow-x: auto;
-}
-
-table {
+/* Tabela */
+.result-container table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-th, td {
-  padding: 10px;
+.result-container th,
+.result-container td {
+  padding: 12px 10px;
   border: 1px solid #ccc;
-  text-align: center;
   font-size: 14px;
+  text-align: center;
 }
 
-th {
+.result-container th {
   background-color: #102C74;
   color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
+.result-container tr:nth-child(even) {
+  background-color: #f1f7ff;
 }
 
-.btn-voltar {
+/* Botão Voltar */
+.result-container .btn-voltar {
   display: inline-block;
-  margin-top: 30px;
-  padding: 12px 20px;
+  padding: 12px 24px;
   background-color: #102C74;
   color: white;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
-.btn-voltar:hover {
+.result-container .btn-voltar:hover {
   background-color: #0056b3;
 }
