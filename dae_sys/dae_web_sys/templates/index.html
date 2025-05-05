@@ -6,82 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAE_SYSTEMS</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
 </head>
-    <div>
-    <body class="fundo">
-    <div> <img class="img" src="{% static 'imagens/logo' %}" alt="">  <div class="dae"> DIVISÃO DE ANÁLISE ECONÔMICA </div>   </div>
-    <h1> SIMULADOR DE PREÇOS </h1>
-    
-    <div class="centro">
+<body class="bg-primary">
+    <header class="app-header">
+        <img class="logo" src="{% static 'imagens/logo' %}" alt="Logo DAE Systems">
+        <h2 class="division-title">DIVISÃO DE ANÁLISE ECONÔMICA</h2>
+    </header>
 
-        <br> <br>
+    <main class="container">
+        <h1 class="page-title">SIMULADOR DE PREÇOS</h1>
 
-        <form action="{% url "custos" %}" method="post">
-            
+        <form action="{% url "custos" %}" method="post" class="price-simulator-form">
             {% csrf_token %}
-            <label for=""> Filtrar Municípios Por: </label>
-            {% for f in filter %}
-                <input type="radio" name="filter" value="{{ f }}"> {{ f }}
-            {% endfor %}
-            
-            <br>
-            
-            <select class="cent2" id="mesor" name="mesor">
-                {% for msr in meso %}
-                    <option value="{{ msr.mesorregiao }}">{{ msr.mesorregiao }}</option>
-                {% endfor %}
-            </select>
-            
-            <select class="cent2" id="regiao" name="regiao">
-                {% for r in regioes %}
-                    <option value="{{ r.regiao }}">{{ r.regiao }}</option>
-                {% endfor %}
-            </select>
-            
-            <br>
 
-            <label for="municipio">Município</label>
-            <select id="municipio" name="municipio" >
-                {% for m in munis %}
-                <option value="{{ m.municipio }}">{{ m.municipio }}</option>
-                {% endfor %}
-            </select>
+            <div class="form-group">
+                <label class="form-label">Filtrar Municípios Por:</label>
+                <div class="radio-group">
+                    {% for f in filter %}
+                        <input type="radio" name="filter" id="filter_{{ forloop.counter }}" value="{{ f }}">
+                        <label for="filter_{{ forloop.counter }}">{{ f }}</label>
+                    {% endfor %}
+                </div>
+            </div>
 
-                    <label for=""> Serviços </label>
+            <div class="form-group">
+                <label class="form-label" for="mesor">Mesorregião</label>
+                <select class="select-field" id="mesor" name="mesor">
+                    {% for msr in meso %}
+                        <option value="{{ msr.mesorregiao }}">{{ msr.mesorregiao }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
+            <div class="form-group">
+                <label class="form-label" for="regiao">Região</label>
+                <select class="select-field" id="regiao" name="regiao">
+                    {% for r in regioes %}
+                        <option value="{{ r.regiao }}">{{ r.regiao }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="municipio">Município</label>
+                <select class="select-field" id="municipio" name="municipio">
+                    {% for m in munis %}
+                        <option value="{{ m.municipio }}">{{ m.municipio }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Serviços</label>
+                <div class="radio-group">
                     {% for s in servi %}
-                        <input type="radio" name="servico" value="{{ s }}"> {{ s }}
+                        <input type="radio" name="servico" id="servico_{{ forloop.counter }}" value="{{ s }}">
+                        <label for="servico_{{ forloop.counter }}">{{ s }}</label>
                     {% endfor %}
-                    
-                    <br>
-                    <!-- Campo de texto oculto por padrão -->
-                     <div class="cent">
-                    <label id="extraInput2"  style="display: none;"> Mbps Internet </label>
-                    <input type="text" class="cent" name="mb_net" id="extraInput" style="display: none;">
+                </div>
+            </div>
 
-                    <label id="extraInput3" style="display: none;"> Mbps Dados </label>
-                    <input type="text" name="mb_link" class="cent" id="extraInput4" style="display: none;">
-                      </div>
+            <div class="form-group extra-inputs">
+                <label class="form-label" id="mbps_internet_label" style="display: none;">Mbps Internet</label>
+                <input type="text" class="input-text" name="mb_net" id="mbps_internet" style="display: none;">
 
-                  <br> <br>
-                  
-                  <label for=""> Ano </label>
-                  <select id="select" name="ano">
+                <label class="form-label" id="mbps_dados_label" style="display: none;">Mbps Dados</label>
+                <input type="text" class="input-text" name="mb_link" id="mbps_dados" style="display: none;">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="ano">Ano</label>
+                <select class="select-field" id="ano" name="ano">
                     {% for a in anos %}
-                    <option value="{{a}}">{{a}}</option>
+                        <option value="{{a}}">{{a}}</option>
                     {% endfor %}
-                  </select>
+                </select>
+            </div>
 
-                  <script src="{% static 'js/script.js' %}" ></script>
+            <button type="submit" class="button-primary">Consultar</button>
+        </form>
 
-                  <br>
-                  
-                  <button type="submit" class="btn"> Consultar </button> 
-         </form>
-                    
-    </div>
-
+        <script src="{% static 'js/script.js' %}"></script>
+    </main>
 </body>
-
 </html>
