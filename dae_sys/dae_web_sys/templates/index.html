@@ -10,7 +10,7 @@
 
 <body class="fundo">
   <header class="header">
-    <img class="img" src="{% static 'imagens/logo' %}" alt="Logo" />
+    <img class="img" src="{% static 'imagens/logo.png' %}" alt="Logo" />
     <div class="dae">DIVISÃO DE ANÁLISE ECONÔMICA</div>
   </header>
 
@@ -29,13 +29,15 @@
         </fieldset>
 
         <div class="form-group">
-          <select name="mesor">
+          <select name="mesor" id="mesor" style="display: none;">
+            <option value="">Selecione uma mesorregião</option>
             {% for msr in meso %}
               <option value="{{ msr.mesorregiao }}">{{ msr.mesorregiao }}</option>
             {% endfor %}
           </select>
 
-          <select name="regiao">
+          <select name="regiao" id="regiao" style="display: none;">
+            <option value="">Selecione uma região</option>
             {% for r in regioes %}
               <option value="{{ r.regiao }}">{{ r.regiao }}</option>
             {% endfor %}
@@ -43,7 +45,8 @@
         </div>
 
         <label for="municipio">Município</label>
-        <select id="municipio" name="municipio">
+        <select id="municipio" name="municipio" disabled>
+          <option value="">Selecione um município</option>
           {% for m in munis %}
             <option value="{{ m.municipio }}">{{ m.municipio }}</option>
           {% endfor %}
