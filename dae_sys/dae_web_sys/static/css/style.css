@@ -4,7 +4,7 @@ body {
   font-family: Helvetica, sans-serif;
   background-color: #102C74;
   color: #333;
-   padding-bottom: 60px; /* Altura igual ou maior que o footer */
+  padding-bottom: 60px;
 }
 
 h1 {
@@ -16,17 +16,17 @@ h1 {
 /* Cabeçalho */
 .header {
   display: flex;
-  flex-direction: column; /* Alinha os itens em coluna */
-  align-items: flex-start; /* Alinha os itens à esquerda */
-  justify-content: center; /* Centraliza verticalmente */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   padding: 20px 30px;
-  text-align: left; /* Garante que o texto fique alinhado à esquerda */
+  text-align: left;
 }
 
 .img {
   width: 80px;
   height: 80px;
-  margin-bottom: 10px; /* Espaço entre logo e texto */
+  margin-bottom: 10px;
 }
 
 /* Contêiner principal */
@@ -36,12 +36,13 @@ h1 {
   margin: 0 auto;
   padding: 30px;
   border-radius: 8px;
-  
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  height: auto; /* Garante que a altura acompanhe o conteúdo */
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #extraFields {
@@ -70,7 +71,7 @@ legend {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #102C74;
+  color: #0f1c3e;
   font-weight: bold;
 }
 
@@ -81,6 +82,7 @@ select {
   margin-bottom: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 /* Grupo de selects lado a lado */
@@ -92,6 +94,7 @@ select {
 
 .form-group select {
   flex: 1;
+  min-width: 100px;
 }
 
 /* Botão */
@@ -105,6 +108,8 @@ select {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: fit-content;
+  align-self: center;
 }
 
 .btn:hover {
@@ -118,74 +123,31 @@ select {
   margin-bottom: 10px;
 }
 
-/* Responsividade básica para telas menores */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-    width: 95%;
-  }
-
-  .form-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  .dae {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  select, input[type="text"] {
-    width: 100%;
-  }
-}
-
 /* Rodapé */
 .footer {
-  background-color: #102C74; /* Cor de fundo do rodapé */
-  color: #ddd; /* Cor do texto */
-  padding: 15px 30px; /* Espaçamento interno */
-  position: fixed; /* Fixa o rodapé no fundo */
-  bottom: 0; /* Posiciona o rodapé no fundo */
-  left: 0; /* Alinha o rodapé ao lado esquerdo */
-  width: 100%; /* Garante que o rodapé tenha largura total */
-  text-align: left; /* Alinha o texto à esquerda */
+  background-color: #102C74;
+  color: #ddd;
+  padding: 15px 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
   font-size: 20px;
+  z-index: 100;
 }
 
 .footer p {
   margin: 0;
 }
 
-
-/* Acessibilidade visual: foco em campos */
+/* Acessibilidade visual */
 input:focus, select:focus, button:focus {
   outline: 3px solid #0056b3;
   outline-offset: 2px;
   background-color: #f0f8ff;
 }
 
-/* Melhoria de contraste para textos dentro de labels */
-label {
-  color: #0f1c3e; /* mais escuro que #102C74 */
-}
-
-/* Campos de radio e checkbox com melhor espaçamento */
 input[type="radio"],
 input[type="checkbox"] {
   margin-right: 8px;
@@ -194,15 +156,15 @@ input[type="checkbox"] {
 /* Contêiner de resultado */
 .result-container {
   background-color: aliceblue;
-  max-width: 90%;
+  max-width: 95%;
   margin: 40px auto;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  overflow-x: auto;
 }
 
-/* Tabela */
 .result-container table {
   width: 100%;
   border-collapse: collapse;
@@ -226,7 +188,6 @@ input[type="checkbox"] {
   background-color: #f1f7ff;
 }
 
-/* Botão Voltar */
 .result-container .btn-voltar {
   display: inline-block;
   padding: 12px 24px;
@@ -241,4 +202,60 @@ input[type="checkbox"] {
 
 .result-container .btn-voltar:hover {
   background-color: #0056b3;
+}
+
+/* Responsividade geral */
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .dae {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  select, input[type="text"] {
+    width: 100%;
+  }
+
+  .result-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .result-container table {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-container th, .result-container td {
+    padding: 8px 5px;
+    font-size: 11px;
+  }
+
+  .footer {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
 }
