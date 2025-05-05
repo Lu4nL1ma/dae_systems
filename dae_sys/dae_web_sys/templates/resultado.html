@@ -1,58 +1,52 @@
 {% load static %}
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>DAE_SYSTEMS</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
-    <div>
-    <body class="fundo">
-      <div> <img class="img" src="{% static 'imagens/logo' %}" alt="">  <div class="dae"> DIVISÃO DE ANÁLISE ECONÔMICA </div>   </div>
-    <h1> PREÇO EM {{ano_busca}} </h1>
-    
-    <div class="centro">
-   
 
-            <br> <br>
-             
-                  <div class="table">
-   
-                  <table>
-                    <tr>
-                      <th>Mesorregião</th>
-                      <th>Região</th>
-                      <th>Município</th>
-                      <th>Modalidade</th>
-                      <th>Tecnologia</th>
-                      <th>Mbps</th>
-                      <th>Transporte</th>
-                      <th>Manutenção</th>
-                      <th>Preço Final</th>
+<body>
+    <header class="header">
+        <img class="img" src="{% static 'imagens/logo.png' %}" alt="Logo" />
+    </header>
 
-                    </tr>
-                    {% for c in df.itertuples %}
-                    <tr>
-                      <td>{{c.mesorreg}}</td>
-                      <td>{{c.regint}}</td>
-                      <td>{{c.municipio}}</td>
-                      <td>{{c.modalidade}}</td>
-                      <td>{{c.tecnologia}}</td>
-                      <td>{{c.mbps}}</td>
-                      <td>{{c.cunittransp}}</td>
-                      <td>{{c.cmanut}}</td>
-                      <td>{{c.preco_final}}</td>
-                      
-                    </tr>
-                    {% endfor %}
-                  </table>
+    <h1>PREÇO EM {{ ano_busca }}</h1>
 
-                 </div>  
-                 
-                <div> <a href="{% url 'form' %}" class="btn-voltar"> Voltar </a> </div> 
-    </div>
+    <main class="results-container">
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Mesorregião</th>
+                    <th>Região</th>
+                    <th>Município</th>
+                    <th>Modalidade</th>
+                    <th>Tecnologia</th>
+                    <th>Mbps</th>
+                    <th>Transporte</th>
+                    <th>Manutenção</th>
+                    <th>Preço Final</th>
+                </tr>
+                {% for c in df.itertuples %}
+                <tr>
+                    <td>{{ c.mesorreg }}</td>
+                    <td>{{ c.regint }}</td>
+                    <td>{{ c.municipio }}</td>
+                    <td>{{ c.modalidade }}</td>
+                    <td>{{ c.tecnologia }}</td>
+                    <td>{{ c.mbps }}</td>
+                    <td>{{ c.cunittransp }}</td>
+                    <td>{{ c.cmanut }}</td>
+                    <td>{{ c.preco_final }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
 
+        <a href="{% url 'form' %}" class="btn-voltar">Voltar</a>
+    </main>
 </body>
-
 </html>
