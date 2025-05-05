@@ -28,14 +28,6 @@ h1 {
   margin-bottom: 10px; /* Espaço entre logo e texto */
 }
 
-.dae {
-  color: #ddd;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-
-
 /* Contêiner principal */
 .container {
   background-color: aliceblue;
@@ -162,12 +154,11 @@ select {
   left: 0; /* Alinha o rodapé ao lado esquerdo */
   width: 100%; /* Garante que o rodapé tenha largura total */
   text-align: left; /* Alinha o texto à esquerda */
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .footer p {
   margin: 0;
-  font-size: 14px;
 }
 
 
