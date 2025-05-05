@@ -162,7 +162,7 @@ select {
   left: 0; /* Alinha o rodapé ao lado esquerdo */
   width: 100%; /* Garante que o rodapé tenha largura total */
   text-align: left; /* Alinha o texto à esquerda */
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer p {
