@@ -16,10 +16,10 @@ h1 {
 .header {
   display: flex;
   flex-direction: column; /* Alinha os itens em coluna */
-  align-items: center;    /* Centraliza horizontalmente */
+  align-items: flex-start; /* Alinha os itens à esquerda */
   justify-content: center; /* Centraliza verticalmente */
   padding: 20px 30px;
-  text-align: center; /* Centraliza o texto */
+  text-align: left; /* Garante que o texto fique alinhado à esquerda */
 }
 
 .img {
@@ -33,6 +33,7 @@ h1 {
   font-weight: bold;
   font-size: 18px;
 }
+
 
 
 /* Contêiner principal */
