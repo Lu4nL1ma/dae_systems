@@ -1,233 +1,181 @@
-.fundo{background-color: #102C74;}
-
-body h1{text-align: center;
-        color: white;
-        font-family: Helvetica, sans-serif;}
-
-
-.centro{width: 1000px;
-        height: 640px;
-        background-color: aliceblue;
-        margin: auto;
-        text-align: center;
-        }
-
-.centro select{width: 400px;
-              text-align: center;
-              margin: 10px;
-              position: relative;
-              z-index: 1;
-                }
-
-.centro option{width: 400px;
-              text-align: center;
-              margin: 10px;
-              position: relative;
-              z-index: 1;
-                }
-
-
-.centro label{background-color: #102C74;
-              padding: 5px;
-             width: 248px;
-            margin: auto;
-            color: #ddd;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            font-weight: bold;
-            font-size: 18px;
-            z-index: 1;
-            font-family: Helvetica, sans-serif;
-            }   
-
-.bt{
-        width: 100px;
-        text-align: center;
-        position: relative;
-        top: 100px;
-        font-weight: bold;
-        font-size: 18px;}
-.bt1{
-        width: 100px;
-        text-align: center;
-        align-items: center;
-        font-weight: bold;
-        font-size: 18px;}
-
-
-/* Container do dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
+/* Estilos Gerais */
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px; /* Adiciona um pouco de espaçamento ao redor da página */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    min-height: 100vh; /* Garante que o fundo cubra toda a altura da tela */
 }
 
-/* Estilo do botão */
-.dropdown-button {
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 354px;
-  height: 8px;
-  margin: auto;
-  align-items: center;
-  border: 1px solid;
-  font-size: 14px;
-  font-family: Helvetica, sans-serif;
+.bg-primary {
+    background-color: #102C74;
 }
 
-.dropdown-button:hover {
-  background-color: #102C74;
-  color: white;
+.app-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Estilo do conteúdo do dropdown */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  min-width: 354px;
-  border-radius: 5px;
-  z-index: 1000;
-  left: 18px;
+.logo {
+    width: 100px;
+    height: 90px;
+    margin-right: 15px;
 }
 
-/* Estilo dos itens do dropdown */
-.dropdown-item {
-  padding: 12px 16px;
-  cursor: pointer;
+.division-title {
+    font-size: 1.2em;
+    color: #ddd;
+    font-weight: bold;
 }
 
-.dropdown-item:hover {
-  background-color: #f1f1f1;
+.container {
+    background-color: aliceblue;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Tornando o container responsivo */
+    max-width: 1000px; /* Largura máxima do container */
+    text-align: center;
 }
 
-.dropdown-item a{
-  text-decoration: none; /* Remove o sublinhado */
-  font-style: normal; /* Remove o itálico */}
-
-/* Exibe o dropdown quando o botão é clicado */
-.dropdown:hover .dropdown-content {
-  display: block;
+.page-title {
+    color: #102C74;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
-.filt{position: relative;
-      top: 200px;}
-
-.select {
-  width: 200px; /* Ajuste a largura conforme necessário */
-  margin-bottom: 10px; /* Espaçamento entre os selects */
+/* Estilos do Formulário */
+.price-simulator-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 180px;
+.form-group {
+    margin-bottom: 15px;
+    width: 100%; /* Ocupa a largura total do formulário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.table th, td {
-  padding: 8px;
-  border-bottom: 1px solid black;
-  text-align: center;
+.form-label {
+    background-color: #102C74;
+    color: #ddd;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: block; /* Garante que cada label fique em sua própria linha */
+    width: fit-content; /* Ajusta a largura ao conteúdo */
 }
 
-.table th {
-  background-color: #102C74;
-  color: #ddd;
-  font-weight: bold;
-  font-family: Helvetica, sans-serif;
+.radio-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-.img {width: 100px;
-      height: 90px;
-      position: relative;
-      left: 100px;}
-
-.dae {font-size: 18px;
-      color: #ddd;
-      position: relative;
-      left: 10px;
-      top: 4px;
-      font-weight: bold;
-      font-family: Helvetica, sans-serif;}
-
-/* static/css/styles.css */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #102C74; /* Cor de fundo azul */
-  color: white; /* Cor do texto */
-  text-decoration: none; /* Remove o sublinhado do link */
-  border-radius: 5px; /* Bordas arredondadas */
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Efeito de transição suave */
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 30px;
-  cursor: pointer;
+.radio-group label {
+    background-color: transparent;
+    color: #333;
+    padding: 0;
+    font-weight: normal;
+    display: inline;
+    width: auto;
 }
 
-.btn:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+.select-field {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
 }
 
-.btn-voltar {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #102C74; /* Cor de fundo azul */
-  color: white; /* Cor do texto */
-  text-decoration: none; /* Remove o sublinhado do link */
-  border-radius: 5px; /* Bordas arredondadas */
-  font-size: 18px;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Efeito de transição suave */
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 280px;
+.input-text {
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
 }
 
-.btn-voltar:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+.extra-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.cent{ 
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  left: 200px;}
-
-.cent label{
-        width: 100px;
-        font-weight: bold;
-        font-size: 14px;
-        z-index: 1;
-        font-family: Helvetica, sans-serif;
-        position: relative;
-        right: -230px;
-        margin: 4px;
-      }
-.cent input{
-     text-align: center;
-      }
-
-.cent2 {
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  left: 290px;
+.extra-inputs label {
+    width: fit-content;
+    display: block;
 }
-              
 
+/* Estilos do Botão */
+.button-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #102C74;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+}
 
+.button-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para Tabelas (se você tiver alguma página com tabelas) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #102C74;
+    color: #ddd;
+    font-weight: bold;
+}
+
+/* Responsividade (Exemplo Básico) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .select-field, .input-text {
+        max-width: 100%;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
