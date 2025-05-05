@@ -191,7 +191,9 @@ input[type="checkbox"] {
   margin-right: 8px;
 }
 
-        .results-container {
+#tabela de resultado
+
+.results-container {
             background-color: aliceblue;
             max-width: 1100px;
             margin: 30px auto;
@@ -199,33 +201,33 @@ input[type="checkbox"] {
             border-radius: 8px;
         }
 
-        .table {
+.table {
             overflow-x: auto;
         }
 
-        table {
+table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
 
-        th, td {
+th, td {
             padding: 10px;
             border: 1px solid #ccc;
             text-align: center;
             font-size: 14px;
         }
 
-        th {
+th {
             background-color: #102C74;
             color: white;
         }
 
-        tr:nth-child(even) {
+tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
-        .btn-voltar {
+.btn-voltar {
             display: inline-block;
             margin-top: 30px;
             padding: 12px 20px;
@@ -237,37 +239,10 @@ input[type="checkbox"] {
             transition: background-color 0.3s ease;
         }
 
-        .btn-voltar:hover {
+.btn-voltar:hover {
             background-color: #0056b3;
         }
 
-        .header {
-            display: flex;
-            align-items: center;
-            padding: 10px 30px;
-        }
 
-        .img {
-            width: 80px;
-            height: 80px;
-            margin-right: 20px;
-        }
 
-        .dae {
-            color: #ddd;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        h1 {
-            text-align: center;
-            color: white;
-            margin-top: 20px;
-        }
-
-        body {
-            margin: 0;
-            font-family: Helvetica, sans-serif;
-            background-color: #102C74;
-        }
 
