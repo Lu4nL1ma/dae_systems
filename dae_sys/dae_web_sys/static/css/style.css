@@ -194,7 +194,7 @@ input[type="checkbox"] {
 /* Contêiner de resultado */
 .result-container {
   background-color: aliceblue;
-  max-width: 1000px;
+  max-width: 80%;
   margin: 40px auto;
   padding: 30px;
   border-radius: 10px;
